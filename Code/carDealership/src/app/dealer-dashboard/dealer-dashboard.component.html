@@ -1,0 +1,69 @@
+<div class="container" style="height: 100vh; margin-top: 10vh;">
+    <div class="row d-flex align-items-center fadeIn" style="height: 100%;">
+        <div class="col-12">
+            <div class="row mb-5">
+                <div class="col-12 font-28 text-secondary mt-5">Dealer Dashboard</div>
+                <div class="col-12 card shadow p-2 mt-5">
+                    <div class="row d-flex align-items-center">
+                        <div class="col-6"><img src="/assets/dashboard.svg" class="img img-fluid"></div>
+                        <div class="offset-1 col-4">
+                            <div class="font-25 text-primary py-2" style="line-height: normal;">Hello, Welcome back!</div>
+                            <div class="font-18"><span class="text-primary py-2">Dealer code: </span> {{readData[0].Dealer_Code}}</div>
+                            <div class="font-18"><span class="text-primary py-2">Dealer location: </span>{{readData[0].Dealer_Address_Line_1}}, {{readData[0].Dealer_Address_Line_2}}, {{readData[0].Dealer_Zip_Code}}, {{readData[0].Dealer_Country}}</div>
+                            <div class="font-18"><span class="text-primary py-2">Dealing type: </span>{{readData[0].SALES_SERVICE}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row pt-5">
+                <div class="col-12 font-28 text-secondary mb-5">Tickets</div>
+                <div class="col-12">
+                    <div class="row">
+                        <ng-container *ngFor='let in of prodData ;let i = index'>
+                            <div class="col-4">
+                                <div class="card border-0 shadow-lg p-4 my-4 " style="line-height: 2;">
+                                <div class="font-28 text-primary py-2">Active ticket {{i+1}}</div>
+                                <div class="font-18"><span class="text-primary py-2">Vehicle Number: </span> {{in.Vechile_Identification_Number}}</div>
+                                <div class="font-18"><span class="text-primary py-2">Type of Service: </span> {{in.Type_of_Service}}</div>
+                                <div class="font-18"><span class="text-primary py-2">Start date:</span> {{in.Start_Date_of_Service}}</div>
+                                <div class="font-18"><span class="text-primary py-2">End date: </span> {{in.End_Date_of_Service}}</div>
+                                <div class="font-18"><span class="text-primary py-2">Cost of service: </span> {{in.Cost_of_Service}}</div>
+                                <div class="font-18"><span class="text-primary py-2">Mechanic ID Number: </span> {{in.Mechanic_ID_Number}}</div>
+                                <div class="font-18"><span class="text-primary py-2">Service Center Number: </span> {{in.Service_Center_Code}}</div>
+                                <div class="font-18"><span class="text-primary py-2">Service Center Address: </span> {{in.Service_Center_Address_1}},{{in.Zip_Code}}</div>         
+                                <div class="font-18"><span class="text-primary py-2">Type of Service Available: </span> {{in.Type_of_Service_available}}</div>         
+                                </div>
+                            </div>
+                        </ng-container>
+                    </div>
+                </div>
+                <div class="col-12 font-28 text-secondary my-5">Products</div>
+                <div class="col-12">
+                    <div class="row">
+                        <ng-container *ngFor='let in of vehicleData, ;let i = index'>
+                            <div class="col-4 my-3 ">
+                                <div class="card shadow-sm border-0 p-3" data-bs-toggle="collapse" attr.href="#list-{{i}}"
+                                aria-expanded="false">
+                                <img src="/assets/cars/car{{i}}.jpg" class="img img-fluid">
+                                </div>
+                                <div class="collapse" id="list-{{i}}">
+                                    <div class="card card-body">
+                                        <div class="col-row p-0">
+                                            <div class="col-12"><div class="font-14"><span class="text-primary py-2">Vehicle Number :</span> {{in.Vehicle_Identification_Number}}</div></div>
+                                            <div class="col-12"><div class="font-14"><span class="text-primary py-2">Price:</span> {{in.Price}}</div></div>
+                                            <div class="col-12"><div class="font-14"><span class="text-primary py-2">Type of Tyre :</span> {{in.Type_of_Tyre}}</div></div>
+                                            <div class="col-12"><div class="font-14"><span class="text-primary py-2">Type of Vehicle :</span> {{in.Type_of_Vehicle_Code}}</div></div>     
+                                            <div class="col-12"><div class="font-14"><span class="text-primary py-2">Vehicle Model Code :</span> {{in.Vehicle_Model_Code}}-{{in.Vehicle_Model_Sub_Code}}</div></div>  
+                                            <div class="col-12"><div class="font-14"><span class="text-primary py-2">Vehicle Model Year :</span> {{in.Vehicle_Model_Year}}</div></div>                                       
+                                        </div>
+                                        <div class="col-12 tex-center"><button type="button" class="btn btn-success col-4 mt-2" >Update</button></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-container>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

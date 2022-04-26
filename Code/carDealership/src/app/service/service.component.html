@@ -1,0 +1,54 @@
+<div class="container" style="height: 100vh; margin-top: 10vh;">
+    <div class="row d-flex align-items-center fadeIn" style="height: 100%;">
+        <div class="col-12">
+            <div class="row mb-5">
+                <div class="col-12 p-2 mt-5">
+                    <div class="row">
+                        <div class="col-6"><img src="/assets/service.png" class="img img-fluid"></div>
+                        <div class="col-6" *ngIf="!this.noTickets">
+                            <div class="card border-0 shadow-lg p-4 my-4">
+                                <div class="text-primary text-center font-28 p-5">No Active Tickets</div>
+                            </div>
+                        </div>
+                        <ng-container *ngFor='let in of readData ;let i = index'>
+                        <div class="col-6">
+                            <div class="card border-0 shadow-lg p-4 my-4 " style="line-height: 2;">
+                            <div class="font-28 text-primary py-2">Active ticket {{i+1}}</div>
+                            <div class="font-18"><span class="text-primary py-2">Vehicle Number: </span> {{in.Vechile_Identification_Number}}</div>
+                            <div class="font-18"><span class="text-primary py-2">Type of Service: </span> {{in.Type_of_Service}}</div>
+                            <div class="font-18"><span class="text-primary py-2">Start date:</span> {{in.Start_Date_of_Service}}</div>
+                            <div class="font-18"><span class="text-primary py-2">End date: </span> {{in.End_Date_of_Service}}</div>
+                            <div class="font-18"><span class="text-primary py-2">Cost of service: </span> {{in.Cost_of_Service}}</div>
+                            <div class="font-18"><span class="text-primary py-2">Mechanic ID Number: </span> {{in.Mechanic_ID_Number}}</div>
+                            <div class="font-18"><span class="text-primary py-2">Service Center Number: </span> {{in.Service_Center_Code}}</div>
+                            <div class="font-18"><span class="text-primary py-2">Service Center Address: </span> {{in.Service_Center_Address_1}},{{in.Zip_Code}}</div>         
+                            <div class="font-18"><span class="text-primary py-2">Type of Service Available: </span> {{in.Type_of_Service_available}}</div>         
+                            </div>
+                        </div>
+                    </ng-container>
+                    </div>
+                </div>
+            <!-- </div>
+            <div class="row pt-5">
+                <div class="col-12 font-28 text-secondary mb-5">Our Products</div>
+                <div class="col-12">
+                    <div class="row">
+                        <ng-container *ngFor='let in of counter(5) ;let i = index'>
+                            <div class="col-4 my-3 ">
+                                <div class="card shadow-sm border-0 p-3" data-bs-toggle="collapse" attr.href="#list-{{i}}"
+                                aria-expanded="false">
+                                <img src="/assets/sample_vehicle.svg" class="img img-fluid">
+                                </div>
+                                <div class="collapse" id="list-{{i}}">
+                                    <div class="card card-body">
+                                        Some sample text place holder
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-container>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </div>
+</div>

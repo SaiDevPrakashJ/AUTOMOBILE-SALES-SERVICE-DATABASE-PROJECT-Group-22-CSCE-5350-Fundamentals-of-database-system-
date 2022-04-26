@@ -1,0 +1,95 @@
+.fadeIn {
+    animation-duration: 1s;
+    animation-name: fadeIn;
+  }
+
+  .fadeInFast {
+    animation-duration: 0.5s;
+    animation-name: fadeIn;
+  }
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.text-blue {
+    color:#0887ff;
+}
+
+.text-secondary {
+    color: #3F3D56;
+}
+
+.btn-bigblue {
+    background-color: #0887ff;
+    border-radius: 22px;
+    color: #fff;
+}
+
+.btn-blueborder {
+    background-color: inherit;
+    border-radius: 22px;
+    border: solid 1px #0887FF;
+    color: #0887ff;
+}
+
+.btn-white {
+    border-radius: 22px; 
+    background-color: #fff;
+    color: #0887ff;
+}
+
+.btn-red {
+    border-radius: 22px;
+    background-color: red;
+    color: #fff;
+}
+
+.btn-green {
+    border-radius: 22px;
+    background-color: #22bb45;
+    color: #fff;
+}
+
+.radius {
+    border-radius: 5px;
+}
+
+.border {
+    border: 1px solid #0887FF !important;
+}
+
+.selected {
+    border: 1px solid #0887FF !important;
+}
+
+.popup {
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    position: fixed; /* Stay fixed */
+    z-index: 2;
+}
+
+.blur {
+    height: 100vh;
+    width: 100vw;
+    filter: blur(5px);
+    position: fixed; /* Stay fixed */
+    z-index: -1;
+}
+.font-18 {
+    font-size: 18px;
+}
+.font-22{
+    font-size: 22px;
+}
+.font-25{
+    font-size: 25px;
+}
+.font-28{
+    font-size: 28px;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

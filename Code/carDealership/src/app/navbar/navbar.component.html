@@ -1,0 +1,17 @@
+<div class="row m-0 shadow px-5 fixed-top d-flex align-items-center" style="height: 10vh; width: 100%; background-color: white;">
+    <div class="col-8 d-none d-md-block">
+      <div class="float-left text-primary font-22">
+        XYZ Car Dealership company
+      </div>
+    </div>
+    <div class="col-4 d-none d-md-block text-primary">
+      <div class=" float-right">
+        <span class="mr-4">About Us</span>
+        <span class="mr-4 pointer" *ngIf="this.service.userLogged" (click)="goToService()">Service</span>
+        <span class="mr-4 pointer" *ngIf="this.service.userLogged" routerLink="/customer-dashboard/:id" routerLinkActive="active">Dashboard</span>
+        <span class="mr-4 pointer" *ngIf="this.service.dealerLogged" routerLink="/dealer-dashboard/:id" routerLinkActive="active">Dashboard</span>
+        <span class="pointer" *ngIf="!this.service.dealerLogged" routerLink="/dealer-login" routerLinkActive="active"><button type="button" class="btn btn-primary" > Dealer Sign in</button></span>
+        <span class="pointer mx-2" *ngIf="this.service.dealerLogged" routerLink="/login" routerLinkActive="active"><button type="button" class="btn btn-primary" (click)="logout()"> Log out</button></span>
+        <span class="pointer mx-2" *ngIf="this.service.userLogged" routerLink="/dealer-login" routerLinkActive="active"><button type="button" class="btn btn-primary" (click)="logout()"> Log out</button></span>
+      </div>
+    </div>

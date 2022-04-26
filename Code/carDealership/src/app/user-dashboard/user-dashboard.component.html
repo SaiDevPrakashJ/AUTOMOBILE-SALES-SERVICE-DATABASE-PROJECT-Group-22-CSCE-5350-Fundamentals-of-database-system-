@@ -1,0 +1,58 @@
+<div *ngIf="load" class="container" style="height: 100vh; margin-top: 10vh;">
+    <div class="row d-flex align-items-center">
+        <div class="col-12 text-center">
+            <div class="spinner-border" role="status">
+                <span class="sr-only">Loading...</span>
+              </div>
+        </div>
+    </div>
+</div>
+ <div *ngIf="!load" class="container" style="height: 100vh; margin-top: 10vh;">
+    <div class="row d-flex align-items-center fadeIn" style="height: 100%;">
+        <div class="col-12">
+            <div class="row mb-5">
+                <div class="col-12 card shadow p-2 mt-5">
+                    <div class="row d-flex align-items-center">
+                        <div class="col-6"><img src="/assets/dashboard.svg" class="img img-fluid"></div>
+                        <div class="offset-1 col-4">
+                            <div class="font-28 text-primary py-2" style="line-height: normal;">Hello {{readData[0].Customer_Name}}, Welcome back!</div>
+                            <div class="font-18"><span class="text-primary py-2">Phone:</span> {{readData[0].Customer_Phone_Number}}</div>
+                            <div class="font-18"><span class="text-primary py-2">E-mail:</span> {{readData[0].Customer_Email}}</div>
+                            <div class="font-18"><span class="text-primary py-2">Vehicle Number:</span> {{readData[0].Vehicle_Identification_Number}}</div>
+                            <div class="font-18"><span class="text-primary py-2">Address:</span> {{readData[0].Address_Line_1}}, {{readData[0].Address_Line_2}}, {{readData[0].State_Description}}, {{readData[0].Zip_Code}}</div>
+                            <div class="font-18"><span class="text-primary py-2">Offer Description :</span> {{readData[0].Offer_Code_Description}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row pt-5">
+                <div class="col-12 font-28 text-secondary mb-5">Our Products</div>
+                <div class="col-12">
+                    <div class="row">
+                        <ng-container *ngFor='let in of vehicleData, ;let i = index'>
+                            <div class="col-4 my-3 ">
+                                <div class="card shadow-sm border-0 p-3" data-bs-toggle="collapse" attr.href="#list-{{i}}"
+                                aria-expanded="false">
+                                <img src="/assets/cars/car{{i}}.jpg" class="img img-fluid">
+                                </div>
+                                <div class="collapse" id="list-{{i}}">
+                                    <div class="card card-body">
+                                        <div class="col-row p-0">
+                                            <div class="col-12"><div class="font-14"><span class="text-primary py-2">Vehicle Number :</span> {{in.Vehicle_Identification_Number}}</div></div>
+                                            <div class="col-12"><div class="font-14"><span class="text-primary py-2">Price:</span> {{in.Price}}</div></div>
+                                            <div class="col-12"><div class="font-14"><span class="text-primary py-2">Type of Tyre :</span> {{in.Type_of_Tyre}}</div></div>
+                                            <div class="col-12"><div class="font-14"><span class="text-primary py-2">Type of Vehicle :</span> {{in.Type_of_Vehicle_Code}}</div></div>     
+                                            <div class="col-12"><div class="font-14"><span class="text-primary py-2">Vehicle Model Code :</span> {{in.Vehicle_Model_Code}}-{{in.Vehicle_Model_Sub_Code}}</div></div>  
+                                            <div class="col-12"><div class="font-14"><span class="text-primary py-2">Vehicle Model Year :</span> {{in.Vehicle_Model_Year}}</div></div>                                       
+                                        </div>
+                                        <div class="col-12 tex-center"><button type="button" class="btn btn-primary col-3" >Buy</button></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-container>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
